@@ -38,7 +38,12 @@ export default function App() {
       { error && <p className="error-text">{error}</p>}
       {/* start by mapping over the friends array...*/}
       { friends.length === 0 ? <h2>FRIENDS COMING SOON HOLD YER HORSES!</h2> 
-                              : friends.map(fr => <Friend info={fr} key={fr.id} />) }
+                              : friends.map(fr => <Friend 
+                                                    info={fr} 
+                                                    key={fr.id} 
+                                                    openDetails={openDetails}
+                                                  />)
+      }
       {
         currentFriendId && <Details friendId={currentFriendId} close={closeDetails} />
       }
