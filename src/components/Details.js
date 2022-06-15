@@ -5,6 +5,7 @@ import axios from 'axios'
 export default function Details(props) {
   const { friendId, close } = props
   const [details, setDetails] = useState(null)
+  const [blah, setBlah] = useState("");
 
   // 👉 TASK 4 - Create a side effect 🥇 that runs only after first render.
   // console.log("I'm running after the first render!!")
@@ -15,8 +16,23 @@ export default function Details(props) {
   // 👉 TASK 5 - Create a side effect 👻 that runs only after first render
   // and puts a 'click' event handler on document.
   // See what happens if we don't clean up.
+  useEffect(() => {
+    console.log("Adding a silly listener");
+    const sillyClickListener = () => {
+      // console.log("Here's a random number", Math.random());
+    }
+    document.addEventListener("click", sillyClickListener);
+
+    return () => {
+      console.log("Cleanin' up!");
+      document.removeEventListener("click", sillyClickListener);
+    }
+  }, [])
 
   // 👉 TASK 6 - Create a side effect 🥵 that runs after every render.
+  useEffect(() => {
+    console.log("Running after EVERY render...oh noes.")
+  })
 
   // 👉 TASK 7 - Create a side effect 📲 that runs when a particular variable changes:
   // Whenever props.friendId updates we should trigger a fetch for details of the friend.
