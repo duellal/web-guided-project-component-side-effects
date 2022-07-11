@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 // 👉 TASK 1 - import the axios lib from node_modules
-
+import axios from '../../node_modules'
 // 👉 TASK 2 - import the contants from constants/index.js
 
 import Details from './Details'
