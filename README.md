@@ -23,3 +23,14 @@ all you have to do is run the command `fkill :4000`
 
 ### Q+A:
 
+What does the question mark represent (localhost:4001/friends?api_key=xyz)?
+- It is the parameters; represents a key value pair in the url
+
+
+
+Side Effects:
+- get data from an api
+- do a timer 
+- manual manipulation of the DOM
+
+
