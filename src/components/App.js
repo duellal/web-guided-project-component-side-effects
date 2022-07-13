@@ -12,9 +12,9 @@ export default function App() {
   const [friends, setFriends] = useState([])
   const [currentFriendId, setCurrentFriendId] = useState(null)
 
-  const openDetails = id => {
-    setCurrentFriendId(id)
-  }
+  // const openDetails = id => {
+  //   setCurrentFriendId(id)
+  // }
 
   const closeDetails = () => {
     setCurrentFriendId(null)
@@ -43,7 +43,7 @@ export default function App() {
       <h1>Some of my friends:</h1>
       {/* start by mapping over the friends array...*/
         friends.map((fr) => {
-          return <Friend key={fr.id} info={fr} />
+          return <Friend key={fr.id} info={fr} setCurrentFriendId={setCurrentFriendId} />
         })
       }
       {
